@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>         <html class="no-js lt-ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Ocultando un elemento del DOM en otro | Ejemplos de Código Máquina</title>
+        <meta name="description" content="Ejemplos de imágenes con pie de foto">
+        <meta name="viewport" content="width=device-width">
+
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Código Máquina | http://www.codigomaquina.com" />
+		
+		<link rel='icon' href='/favicon.png' type='image/png' />
+		
+		<style type="text/css">
+			body {
+				font-family: Georgia;
+			}
+			#wrap {
+				margin: 1em 3em;
+			}
+			.ocultador {
+				border: 1px dotted black;
+			}
+			
+			/* Ocultamiento de los elementos, único a todos los ejemplos */
+			* > .oculto {
+				display: none;
+			}
+
+			*:hover > .oculto {
+				display: block;
+				position: absolute;
+			}
+			
+			/* A partir de aquí hay cambios estéticos para que los ejemplos resalten más */
+			/** Ejemplo 1,2 **/
+			img {
+				background-color: white;
+				width: 200px;
+				border: 4px solid black;
+				padding: 1em;
+			}
+			span {
+				position: relative;
+			}
+			/** Ejemplo 1 **/
+			img.oculto {
+				left: 200px;
+				top: -3em;
+			}
+			/** Ejemplo 2 **/
+			*:hover > .enlace-foto-2 {
+				position: static;
+			}
+			/** Ejemplo 3 **/
+			.div-estilo,.div-estilo-2 {
+				background-color: black;
+				border: 2px solid red;
+				width: 50%;
+				padding: 2em;
+				text-align: 1em;
+				color: red;
+				font-weight: bold;
+			}
+			.div-estilo-2 {
+				background-color: white;
+				border-color: blue;
+				color: blue;
+			}
+			/** Ejemplo 4 **/
+			.tooltip {
+				background-color: white;
+				border: 1px solid black;
+				padding: .5em;
+				width: 150px;
+				text-align: center;
+				z-index: 1000;
+				position: absolute;
+			}
+			.t-top {
+				top: -2.5em;
+				left: -100%;
+			}
+			.t-right {
+				top: -50%;
+				left: 110%;
+			}
+			.t-bottom {
+				left: -100%;
+			}
+			.t-left {
+				top: -50%;
+				right: 110%;
+			}
+		</style>
+    </head>
+	
+    <body>
+		<div id="wrap">
+			<h1 style="text-align:center">Ocultando un elemento del DOM en otro</h1>
+			<p>Varios ejemplos de como se puede ocultar un elemento en otro de una manera sencilla. Esto permite ocultar un div en otro, ocultar una imagen en un enlace o texto simple, etc.</p>
+			<strong><p>1. Ocultando una imágen en un texto:</p></strong>
+			<div>
+				<span class="ocultador">Dos cerezas -------------->
+					<img class="oculto" src="../../img/cherry-cherries-fruit.jpg" title="cerezas" alt="cerezas" />
+				</span>
+			</div>
+			<strong><p>2. Una imágen en un texto, con position:static;</p></strong>
+			<div>
+				<span class="ocultador">Dos cerezas:
+					<img class="oculto enlace-foto-2" src="../../img/cherry-cherries-fruit.jpg" title="cerezas" alt="cerezas" />
+				</span>
+			</div>
+			<p>Como se vé, desplaza el texto hacia abajo.</p>
+			<strong><p>3. Un div dentro de otro.</p></strong>
+			<p>Se pueden poner dos div de modo que cada uno tenga diferentes colores.</p>
+			<div class="div-estilo" style="position:relative;border: 1px dotted black;">Lo que la verdad
+				<div class="oculto div-estilo-2" style="width: 25%;left:50%;top:50%;">esconde.</div>
+			</div>
+			<strong><p>4. Finalmente, varios tooltip</p></strong>
+				<span class="ocultador">Arriba
+					<span class="oculto tooltip t-top">Inglés: Top</span>
+				</span>
+				<span class="ocultador">Derecha
+					<span class="oculto tooltip t-right">Inglés: Right</span>
+				</span>
+				<span class="ocultador">Debajo
+					<span class="oculto tooltip t-bottom">Inglés: Bottom</span>
+				</span>
+				<span class="ocultador">Izquierda
+					<span class="oculto tooltip t-left">Inglés: Left</span>
+				</span>
+		</div>
+		
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-38098230-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
