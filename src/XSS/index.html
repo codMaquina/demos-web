@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>         <html class="no-js lt-ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<meta charset="utf-8">
+		<title>Prueba de XSS sin filtrar y filtrando los datos | Ejemplos de Código Máquina</title>
+		<meta name="description" content="Test para comprobar los ataques XSS sin filtar los datos y después de filtrados.">
+		<meta name="viewport" content="width=device-width">
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Código Máquina | http://www.codigomaquina.com" />
+		
+		<link rel='icon' href='/favicon.png' type='image/png' />
+		<style type="text/css">
+			body {
+				font-family: Georgia;
+			}
+			#wrap {
+				margin: 1em 3em;
+			}
+		</style>
+    </head>
+	
+    <body>
+		<div id="wrap">
+			<h1 style="text-align:center">Probando los ataques XSS</h1>
+			<p>A continuación se muestra un formulario. Introduce el ataque XSS (<a href="https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet">ejemplos aquí</a>) y en la página siguiente puedes comprobar el resultado. Pulsando en "Filtrar" se vé como no se obtiene ningún resultado mientras que pulsando en No filtrar sale el mensaje de éxito.</p>
+			<p>NOTA: No todos los ataques de la lista funcionan.</p>
+			<form action="resultado-xss.php" method="post">
+				<label for="vector">Vector de ataque</label>
+				<input type="text" id="vector" name="vector" size="20" value=""  />
+				<input type="submit" value="Filtrar" name="filtrar" /> 
+				<input type="submit" value="No filtrar" name="nofiltrar" /> 
+			</form>
+		</div>
+    </body>
+</html>
