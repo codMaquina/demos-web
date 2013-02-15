@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>         <html class="no-js lt-ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Imágenes con pie de foto | Ejemplos de Código Máquina</title>
+	<meta name="description" content="Ejemplos de imágenes con pie de foto">
+	<meta name="viewport" content="width=device-width">
+
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="Código Máquina | http://www.codigomaquina.com" />
+		
+	<link rel='icon' href='/favicon.png' type='image/png' />
+		
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../../js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+		
+	<style type="text/css">
+		#wrap {
+			padding: 1em 3em;
+		}
+		/*
+		 * A continuación se encuentra dividido por número de imágen.
+		 */
+		body {
+			font-family: Georgia;
+		}
+		/* Tamaño, común a todas */
+			div.foto1,div.foto2,div.foto3 {
+				width: 300px;
+				padding: 1em;
+				transition: width .5s;
+			}
+			div.foto1 img,div.foto2 img,div.foto3 img,
+			div.foto1 span,div.foto2 span,div.foto3 span {
+				width: 100%;
+			}
+			
+		/* Sin enlace foto 1 */
+			div.foto1 {
+				position: relative;
+			}
+			div.foto1 span {
+				position: absolute;
+				left: 0;
+				bottom: -.5em;
+				text-align: center;
+			}
+		/* Sin enlace foto 2 */
+			.foto2 img {
+				padding:1em;
+			}
+			.foto2, .foto2 span {
+				padding: 0 1em;
+			}
+			div.foto2 {
+				position: relative;
+				margin: 0 auto;
+			}
+			div.foto2 span {
+				bottom: 1.5em;
+				color: red;
+				left: 0;
+				position: absolute;
+				text-align: center;
+				text-shadow: 0 0 1px white;
+			}
+			div.foto2 img {
+				border: .5em solid black;
+				border-bottom: 2em solid black;
+			}
+		/* Con enlace foto 3 */
+			.foto3 img {
+				padding:1em;
+			}
+			.foto3, .foto3 span {
+				padding: 0 1em;
+			}
+			div.foto3 {
+				position: relative;
+				margin: 0 auto;
+				transition: width .5s;
+			}
+			div.foto3 span {
+				bottom: 1.5em;
+				color: red;
+				left: 0;
+				position: absolute;
+				text-align: center;
+				text-shadow: 0 0 1px white;
+			}
+			div.foto3 img {
+				border: .5em solid black;
+				border-bottom: 2em solid black;
+			}
+			div.divalt {
+				width: 500px;
+			}
+			div.foto3 span.spanalt {
+				background-color: white;
+				color: black;
+				left: 0;
+				position: absolute;
+				text-align: center;
+			}
+			div.foto3 img.imgalt {
+				border-color: white;
+				background-color: black;
+			}
+		</style>
+    </head>
+	
+    <body>
+		<div id="wrap">
+			<h1 style="text-align:center">Imágenes con pie de foto mediante CSS</h1>
+			<p>A continuación se muestra cómo se realiza un pie de foto con CSS. Para más indicaciones, visite el <a href="">artículo original</a></p>
+			<p>Pie de foto normal:</p>
+			<div class="foto1">
+				<img src="../../img/cherry-cherries-fruit.jpg" title="cerezas" alt="cerezas" />
+				<span>Dos cerezas</span>
+			</div>
+			<p>Tanto la foto como el pie puede ser como se imagine, y como es un elemento div, se puede situar donde se desee.</p>
+			<p>Pie de foto con más estilo y foto centrada:</p>
+			<div class="foto2">
+				<img src="../../img/cherry-cherries-fruit.jpg" title="cerezas" alt="cerezas" />
+				<span>Dos cerezas</span>
+			</div>
+			<p style="margin-top: 4em;">Finalmente, se pueden aplicar efectos de todo tipo con javascript:</p>
+			<div class="foto3 divjs" id="inicial">
+				<img class="imgjs" src="../../img/cherry-cherries-fruit.jpg" title="cerezas" alt="cerezas" />
+				<span class="spanjs">Haz clic en la foto</span>
+			</div>
+			
+			<script>
+				$(document).ready(function() {
+					$(".imgjs").click(function () {
+						$("div.divjs").toggleClass('divalt');
+						$("img.imgjs").toggleClass('imgalt');
+						$("span.spanjs").toggleClass('spanalt');
+					});
+				});
+			</script>
+		</div>
+    </body>
+</html>
