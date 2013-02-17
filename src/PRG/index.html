@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>         <html class="no-js lt-ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+		<meta charset="utf-8">
+		<title>Prueba de PRG (Post/Redirect/Get) | Ejemplos de Código Máquina</title>
+		<meta name="description" content="Test para probar POST redireccionando y sin redireccionar a GET.">
+		<meta name="viewport" content="width=device-width">
+
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Código Máquina | http://www.codigomaquina.com" />
+			
+		<link rel='icon' href='/favicon.png' type='image/png' />
+
+		<style type="text/css">
+			body {
+				font-family: Georgia;
+			}
+			#wrap {
+				margin: 1em 3em;
+			}
+		</style>
+    </head>
+	
+    <body>
+		<!-- Los scripts que aparecen en el código pertenecen a Andy Pemberton -->
+		<div id="wrap">
+			<h1 style="text-align:center">Prueba de PRG</h1>
+			<p>Para esta demo iba a poner simplemente la redirección 302 y simplemente un si/no. Buscando algo de información encontré <a href="http://www.andypemberton.com/engineering/the-post-redirect-get-pattern/">esta web</a> con <a href="http://www.andypemberton.com/sandbox/prg/">esta demo</a> y decidí inspirarme en ella, que la he copiado vamos.</p>
+			<p>Lo he realizado para liberar el código en GitHub.</p>
+			<p>Idea original: Andy Pemberton</p>
+			
+			<form action="resultado-prg.php" method="post">
+				<fieldset>
+					<input name="prg" type="radio" id="sin_prg" value="no" onclick="document.getElementById('status_codes').style.display='none';" >
+					<label for="sin_prg">Ignorar el patrón Post-Redirect-Get (utilizar POST para ver la página directamente)</label><br/>
+					<input name="prg" type="radio" id="con_prg" value="si" onclick="document.getElementById('status_codes').style.display='';" >
+					<label for="con_prg">Aplicar el patrón Post-Redirect-Get (redireccionar después del POST)</label><br/>
+				</fieldset>
+				<fieldset style="margin-left:4em;display:none;" id="status_codes">
+					<input name="rs" type="radio" id="r_301" value="301" >
+					<label for="r_301">301 - Mudado permanentemente</label><br/>
+					<input name="rs" type="radio" id="r_302" value="302" >
+					<label for="r_302">302 - Encontrado</label><br/>
+					<input name="rs" type="radio" id="r_303" value="303" >
+					<label for="r_303">303 - Vea otros</label><br/>
+					<input name="rs" type="radio" id="r_304" value="304" >
+					<label for="r_304">304 - No modificado</label><br/>
+					<input name="rs" type="radio" id="r_305" value="305" >
+					<label for="r_305">305 - Utilice un proxy</label><br/>
+					<input name="rs" type="radio" id="r_301" value="307" >
+					<label for="r_307">307 - Redirección temporal</label><br/>
+				</fieldset>
+				<input type="text" name="control" id="control" value="" />
+				<input type="submit" value="Enviar" />
+			</form>
+		</div>
+    </body>
+</html>
