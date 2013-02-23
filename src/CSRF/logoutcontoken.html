@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]>         <html class="no-js lt-ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Logout con token (CSRF) | Ejemplos de Código Máquina</title>
+        <meta name="description" content="Test ver como funciona el problema del CSRF, falsificación de petición en sitios cruzados.">
+        <meta name="viewport" content="width=device-width">
+
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Código Máquina | http://www.codigomaquina.com" />
+		
+		<link rel='icon' href='/favicon.png' type='image/png' />
+
+		 <style type="text/css">
+		body {
+			font-family: Georgia;
+		}
+		#wrap {
+			margin: 1em 3em;
+		}
+		</style>
+    </head>
+	
+    <body>
+		<div id="wrap">
+			<h1 style="text-align:center">Prueba de logout con token para CSRF</h1>
+			<p>Esta página contiene un par de inocentes imágenes. Si todo va bien, actualizando o entrando en la pagina para <a href="checkStatus.php" target="_blank">comprobar si estas conectado</a> debería poner conectado.</a></p>
+			<img src="logoutcon.php" alt="Imagen no cargada, realmente intenta desconectarte, pero no puede al faltarle el token" />
+			<img src="../../img/demo/cherry-cherries-fruit.jpg" alt="Imagen correcta" />
+		</div>
+    </body>
+</html>
